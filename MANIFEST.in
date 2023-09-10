@@ -1,0 +1,2 @@
+recursive-include src/spider_objout/spider/utils *.sh
+recursive-include src/spider_objout/visualizing *.ttf *.txt
