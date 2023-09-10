@@ -1,2 +1,3 @@
 spider_objout.egg-info
 *.xlsx
+__pycache__
