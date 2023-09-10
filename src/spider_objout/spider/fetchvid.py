@@ -1,13 +1,10 @@
-import random
 import re
 import time
 
-from .utils.fetch import Fetch
 
-
-class FetchVideoId():
-    def __init__(self):
-        self.fet = Fetch()
+class FetchVideoId:
+    def __init__(self, fet):
+        self.fet = fet
 
         self.url = 'https://search.bilibili.com/all'
         self.kwd = ''
@@ -46,7 +43,7 @@ class FetchVideoId():
             req = self.fet.reqwrapper(self.url, self.getparams(p))
             resp = self.fet.request(req)
             self.vlist += self.parse(resp.decode())
-            time.sleep(random.randint(1, 2))
+            time.sleep(0.4)
 
         return self.vlist
 

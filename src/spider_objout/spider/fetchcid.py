@@ -1,12 +1,10 @@
 import gzip
 import re
 
-from .utils.fetch import Fetch
-
 
 class FetchCid:
-    def __init__(self):
-        self.fet = Fetch()
+    def __init__(self, fet):
+        self.fet = fet
 
         self.urltpl = 'https://www.bilibili.com/video/{}/'
         self.params = {

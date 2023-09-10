@@ -1,9 +1,6 @@
-from .utils.fetch import Fetch
-
-
 class FetchDanmaku:
-    def __init__(self):
-        self.fet = Fetch()
+    def __init__(self, fet):
+        self.fet = fet
 
         self.url = 'https://api.bilibili.com/x/v2/dm/wbi/web/seg.so'
         self.cid = '1196257131'
