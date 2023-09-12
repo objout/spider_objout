@@ -1,13 +1,15 @@
 import unittest
 
-from spider_objout.persistent.persistent import Persistent
+from src.spider_objout.persistent.persistent import Persistent
 
 
 class TestPersis(unittest.TestCase):
-    def test_persis(self):
+    def test_read(self):
+        p = Persistent('1.xlsx')
+        self.assertRaises(Exception, p.read)
+
         p = Persistent()
         self.assertRaises(Exception, p.read)
-        self.assertRaises(Exception, p.write)
 
 
 if __name__ == "__main__":

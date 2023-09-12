@@ -1,6 +1,6 @@
 import unittest
 
-from spider_objout.spider.utils.getheaders import getheaders, getcookie, \
+from src.spider_objout.spider.utils.getheaders import getheaders, getcookie, \
     parsecookie
 
 

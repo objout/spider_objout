@@ -1,4 +1,5 @@
 from .persistent.persistent import Persistent
+from .spider.utils.fetch import Fetch
 from .spider.fetchcid import FetchCid
 from .spider.fetchdanmaku import FetchDanmaku
 from .spider.fetchvid import FetchVideoId
@@ -10,11 +11,12 @@ def main():
     try:
         fname = 'danmakumap.xlsx'
         kwd = '日本核污染水排海'
-        page = 1
+        page = 8
 
-        fetvid = FetchVideoId()
-        fetcid = FetchCid()
-        fetdan = FetchDanmaku()
+        fet = Fetch()
+        fetvid = FetchVideoId(fet)
+        fetcid = FetchCid(fet)
+        fetdan = FetchDanmaku(fet)
         parsedan = ParseDanmaku()
         per = Persistent(fname)
         vs = Visualize(fname)

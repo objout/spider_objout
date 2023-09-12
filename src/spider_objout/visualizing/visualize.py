@@ -26,10 +26,11 @@ class Visualize:
             return
 
         self.stopwords = set()
-        self.stopwords.update([
-            line.strip() for line in
-            open(self.stopwords_path, 'r').readlines()
-        ])
+        with open(self.stopwords_path, 'r') as f:
+            self.stopwords.update([
+                line.strip() for line in
+                f.readlines()
+            ])
         self.comment_list = []
         self.text = ''
 
@@ -59,6 +60,9 @@ class Visualize:
         plt.show()
 
     def run(self):
-        self.readcomments()
-        self.cutword()
-        self.render()
+        try:
+            self.readcomments()
+            self.cutword()
+            self.render()
+        except Exception as e:
+            raise e

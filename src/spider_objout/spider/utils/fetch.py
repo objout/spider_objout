@@ -10,10 +10,16 @@ class Fetch:
 
     def reqwrapper(self, url, params):
         """Request wrapper."""
-        params = urllib.parse.urlencode(params)
-        url = f'{url}?{params}'
-        return urllib.request.Request(url=url, headers=self.headers)
+        try:
+            params = urllib.parse.urlencode(params)
+            url = f'{url}?{params}'
+            return urllib.request.Request(url=url, headers=self.headers)
+        except Exception as e:
+            raise e
 
     def request(self, req):
         """Open request."""
-        return urllib.request.urlopen(req).read()
+        try:
+            return urllib.request.urlopen(req).read()
+        except Exception as e:
+            raise e

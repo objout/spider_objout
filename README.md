@@ -5,6 +5,7 @@
         * [Preview](#preview)
     * [Tech Stack](#tech-stack)
     * [Usage](#usage)
+    * [Unit Test](#unit-test)
 
 <!-- vim-markdown-toc -->
 
@@ -48,4 +49,11 @@ spider_objout
 
 deactivate
 rm -rf $HOME/tmp/spider_venv
+```
+
+## Unit Test
+
+```bash 
+python3 -m unittest tests/test_getheaders.py
+python3 -m unittest tests/*.py
 ```

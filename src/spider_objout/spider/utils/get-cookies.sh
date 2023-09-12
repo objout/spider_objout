@@ -9,4 +9,5 @@ wget --user-agent="$USER_AGENT" \
   -O /dev/null \
   --save-cookies "$1" \
   --quiet \
+  --spider \
   "$TARGET"
