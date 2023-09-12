@@ -17,9 +17,9 @@ classifiers = [
   "Operating System :: OS Independent",
 ]
 dependencies = [
-  "protobuf==4.24.2",
+  "protobuf==4.23.2",
   "openpyxl==3.1.2",
-  "matplotlib==3.7.2",
+  "matplotlib==3.6.2",
   "numpy==1.25.2",
   "Pillow==10.0.0",
   "wordcloud==1.9.2",
