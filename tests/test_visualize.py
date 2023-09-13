@@ -8,6 +8,9 @@ class TestVisualize(unittest.TestCase):
         v = Visualize('no.xlsx')
         self.assertRaises(Exception, v.run)
 
+        v = Visualize()
+        self.assertRaises(Exception, v.run)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -17,8 +17,11 @@ class FetchCid:
         self.vid = ''
 
     def parse(self, resp=b''):
-        res = gzip.decompress(resp).decode()
-        return res
+        try:
+            res = gzip.decompress(resp).decode()
+            return res
+        except Exception as e:
+            raise e
 
     def fetchvdpage(self):
         """Fetch video page by video id."""

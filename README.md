@@ -28,11 +28,15 @@ A spider for Bilibili danmaku and visualizing.
 
 ## Usage
 
-Prerequisites:
+Prerequisites:Make sure you have the following 
+dependencies installed.
 - `wget`
 - `bash`
-- `python 3`
+- `python3`
 - `pip3`
+- `python3-dev`
+- `zlib-dev`
+- `jpeg-dev`
 
 ```bash
 # Run the following commands in your BASH.

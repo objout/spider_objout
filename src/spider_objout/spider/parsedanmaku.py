@@ -10,13 +10,16 @@ class ParseDanmaku:
         self.reg = '.*?content:.*?"(.*?)".*?ctime.*?'
         self.pattern = re.compile(self.reg, re.S)
 
-    def pasrse(self, data=''):
+    def parse(self, data=''):
         """Parse the protobuf data."""
-        danmakulist = []
-        my_seg = bili_pb2.DmSegMobileReply()  # type: ignore
-        my_seg.ParseFromString(data)
-        for j in my_seg.elems:
-            res = text_format.MessageToString(j, as_utf8=True)
-            content = self.pattern.match(res).group(1)  # type: ignore
-            danmakulist.append(content)
-        return danmakulist
+        try:
+            danmakulist = []
+            my_seg = bili_pb2.DmSegMobileReply()  # type: ignore
+            my_seg.ParseFromString(data)
+            for j in my_seg.elems:
+                res = text_format.MessageToString(j, as_utf8=True)
+                content = self.pattern.match(res).group(1)  # type: ignore
+                danmakulist.append(content)
+            return danmakulist
+        except Exception as e:
+            raise e

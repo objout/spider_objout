@@ -27,7 +27,7 @@ def main():
         for vid in vidlist:
             cid = fetcid.fetchcid(vid)
             raw = fetdan.fetchdanmaku(cid)  # type:ignore
-            res = parsedan.pasrse(raw)  # type:ignore
+            res = parsedan.parse(raw)  # type:ignore
             for item in res:
                 k = item.strip()
                 danmakumap[k] = danmakumap.get(k, 0) + 1
