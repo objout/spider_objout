@@ -6,6 +6,7 @@
     * [Tech Stack](#tech-stack)
     * [Usage](#usage)
     * [Unit Test](#unit-test)
+    * [Profiling](#profiling)
 
 <!-- vim-markdown-toc -->
 
@@ -62,4 +63,12 @@ rm -rf $HOME/tmp/spider_venv
 ```bash 
 python3 -m unittest tests/test_getheaders.py
 python3 -m unittest tests/*.py
+```
+
+## Profiling
+
+```bash
+cd src
+python3 -m cProfile -o result.cprofile -m spider_objout.main
+python3 profiling.py | grep "spider_objout" | sed 's/\/.*\///g' - | less
 ```
