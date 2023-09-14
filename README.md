@@ -19,6 +19,8 @@ A spider for Bilibili danmaku and visualizing.
 
 ![Preview](imgs/preview.jpg)
 
+![Prev](imgs/prev1.jpg)
+
 ![Word Cloud](imgs/wordcloud.jpg)
 
 ## Tech Stack
