@@ -20,7 +20,11 @@ def fetchDanmakuContent(vidl=[]):
     for vid in vidl:
         cid = fetcid.fetchcid(vid)
         raw = fetdan.fetchdanmaku(cid)  # type:ignore
-        res = parsedan.parse(raw)  # type:ignore
+        res = []
+        try:
+            res = parsedan.parse(raw)  # type:ignore
+        except Exception:
+            continue
         for item in res:
             k = item.strip()
             danmakumap[k] = danmakumap.get(k, 0) + 1  # type:ignore
